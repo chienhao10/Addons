@@ -1,0 +1,11 @@
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\Wladis Cho'gath.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\Wladis Cho'gath.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\Wladis Cho'gath.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Release\EloBuddy.Sandbox.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\obj\Release\Wladis Cho'gath.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\obj\Release\Wladis Cho'gath.pdb

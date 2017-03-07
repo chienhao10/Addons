@@ -1,0 +1,12 @@
+c:\users\ladisla\documents\visual studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\Wladis Cho'gath.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\Wladis Cho'gath.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\Wladis Cho'gath.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\bin\Debug\EloBuddy.Sandbox.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\obj\Debug\Wladis Cho'gath.csprojResolveAssemblyReference.cache
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\obj\Debug\Wladis Cho'gath.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cho'gath\Wladis Cho'gath\obj\Debug\Wladis Cho'gath.pdb
