@@ -52,18 +52,7 @@ namespace Wladis_Chogath
                 SpellsManager.W.Cast(SpellsManager.W.GetPrediction(jungleMonsters).CastPosition);
 
             }
-
-            var Dragon = EntityManager.MinionsAndMonsters.GetJungleMonsters().Where(x => x.Health < x.GetRDamage(SpellSlot.R) && x.BaseSkinName.Contains("Dragon")).FirstOrDefault();
-            var Baron = EntityManager.MinionsAndMonsters.GetJungleMonsters().Where(x => x.Health < x.GetRDamage(SpellSlot.R) && x.BaseSkinName.Contains("Baron")).FirstOrDefault();
-
-            if (Baron == null || Dragon == null) return;
-
-
-            if (SpellsManager.R.IsReady() && SpellsManager.R.IsInRange(Dragon) && Menus.JungleClearMenu["DragonR"].Cast<CheckBox>().CurrentValue && Dragon.Health < Dragon.GetRDamage(SpellSlot.R))
-                SpellsManager.R.Cast(Dragon.Position);
-
-            if (SpellsManager.R.IsReady() && SpellsManager.R.IsInRange(Dragon) && Menus.JungleClearMenu["BaronR"].Cast<CheckBox>().CurrentValue && Baron.Health < Dragon.GetRDamage(SpellSlot.R))
-                SpellsManager.R.Cast(Baron);
+            
         }
         
     }

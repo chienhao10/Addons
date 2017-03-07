@@ -75,9 +75,6 @@ namespace Wladis_Chogath
             JungleClearMenu.Add("Q", new CheckBox("- Use Q"));
             JungleClearMenu.Add("W", new CheckBox("- Use W"));
             JungleClearMenu.Add("ManaSliderJungleClear", new Slider("- Don't use JungleClear when mana is under [{0}%]", 30, 1, 100));
-            JungleClearMenu.AddSeparator();
-            JungleClearMenu.Add("DragonR", new CheckBox("- R dragon killable"));
-            JungleClearMenu.Add("BaronR", new CheckBox("- R baron killable"));
 
             KillStealMenu.AddGroupLabel("Killsteal Settings");
             KillStealMenu.Add("Q", new CheckBox("- Use Q"));
