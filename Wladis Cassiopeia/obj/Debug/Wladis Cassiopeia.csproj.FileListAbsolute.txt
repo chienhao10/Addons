@@ -1,0 +1,12 @@
+c:\users\ladisla\documents\visual studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\Wladis Cassiopeia.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\Wladis Cassiopeia.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\Wladis Cassiopeia.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\SharpDX.XInput.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\obj\Debug\Wladis Cassiopeia.csprojResolveAssemblyReference.cache
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\obj\Debug\Wladis Cassiopeia.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Cassiopeia\Wladis Cassiopeia\obj\Debug\Wladis Cassiopeia.pdb

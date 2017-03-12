@@ -24,21 +24,19 @@ namespace Wladis_Cassiopeia
             var Poisoned = EntityManager.Heroes.Enemies.Find(e => e.IsValidTarget(SpellsManager.E.Range) && e.HasBuffOfType(BuffType.Poison));
             //var Poisoned = EntityManager.Heroes.Enemies.Where(e => e.IsValidTarget(SpellsManager.E.Range)).OrderBy(e => e.HasBuffOfType(BuffType.Poison)).ThenBy(e => target).FirstOrDefault;
 
-            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue && !target.IsDead)
-            {
-                if (!ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue)
+            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue && !target.IsDead && !ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.R.Range))
                 {
                     if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                        Core.DelayAction(() => SpellsManager.R.Cast(target), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
-                    else SpellsManager.R.Cast(target);
+                        Core.DelayAction(() => SpellsManager.R.Cast(target.Position), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
+                    else SpellsManager.R.Cast(target.Position);
                 }
-            }
+            
 
-            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue && !target.IsFacing(myhero) && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue && !target.IsDead) 
+            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue && target.IsFacing(myhero) && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue && !target.IsDead && target.IsValidTarget(SpellsManager.R.Range)) 
             {
                 if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                    Core.DelayAction(() => SpellsManager.R.Cast(target), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
-                else SpellsManager.R.Cast(target);
+                    Core.DelayAction(() => SpellsManager.R.Cast(target.Position), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
+                else SpellsManager.R.Cast(target.Position);
             }
 
 
@@ -54,8 +52,9 @@ namespace Wladis_Cassiopeia
             {
                 var prediction = SpellsManager.Q.GetPrediction(target);
                 if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                        Core.DelayAction(() => SpellsManager.Q.Cast(prediction.CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
-                    else SpellsManager.Q.Cast(prediction.CastPosition);
+                        Core.DelayAction(() => SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
+                    else SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition);
+
             }
 
             if (SpellsManager.E.IsReady() && ComboMenu["E"].Cast<CheckBox>().CurrentValue && Poisoned.IsValidTarget(SpellsManager.E.Range) && ComboMenu["EOnly"].Cast<CheckBox>().CurrentValue && (SpellsManager.Q.IsOnCooldown || !target.IsInRange(myhero,SpellsManager.Q.Range)))
@@ -79,7 +78,7 @@ namespace Wladis_Cassiopeia
                 return;
             //Ignite
             if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range))
+                if (Player.Instance.CountEnemyChampionsInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range))
                     if (target.Health >
                   target.GetRealDamage())
                         Ignite.Cast(Summ);
@@ -99,29 +98,27 @@ namespace Wladis_Cassiopeia
             if ((target == null) || target.IsInvulnerable)
                 return;
 
-            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue)
-            {
-                if (!ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue)
+            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu[target.ChampionName].Cast<CheckBox>().CurrentValue && !ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue)
                 {
                     if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                        Core.DelayAction(() => SpellsManager.R.Cast(target), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
-                    else SpellsManager.R.Cast(target);
+                        Core.DelayAction(() => SpellsManager.R.Cast(target.Position), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
+                    else SpellsManager.R.Cast(target.Position);
                 }
-            }
+            
 
-            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue && !target.IsFleeing)
+            if (SpellsManager.R.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && ComboMenu["ROnly"].Cast<CheckBox>().CurrentValue && target.IsFacing(myhero))
             {
                 if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                    Core.DelayAction(() => SpellsManager.R.Cast(target), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
-                else SpellsManager.R.Cast(target);
+                    Core.DelayAction(() => SpellsManager.R.Cast(target.Position), HumanizerMenu["HumanizeR"].Cast<Slider>().CurrentValue);
+                else SpellsManager.R.Cast(target.Position);
             }
 
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue && SpellsManager.Q.IsReady() && target.IsValidTarget(SpellsManager.Q.Range))
             {
                 var prediction = SpellsManager.Q.GetPrediction(target);
                 if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                    Core.DelayAction(() => SpellsManager.Q.Cast(prediction.CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
-                else SpellsManager.Q.Cast(prediction.CastPosition);
+                    Core.DelayAction(() => SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
+                else SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition);
             }
 
             if (ComboMenu["W"].Cast<CheckBox>().CurrentValue && SpellsManager.W.IsReady() && target.IsValidTarget(SpellsManager.W.Range))
@@ -153,7 +150,7 @@ namespace Wladis_Cassiopeia
                 return;
             //Ignite
             if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range))
+                if (Player.Instance.CountEnemyChampionsInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range))
                     if (target.Health >
                   target.GetRealDamage())
                         Ignite.Cast(Summ);
@@ -166,7 +163,7 @@ namespace Wladis_Cassiopeia
             {
                 if (Player.Instance.IsDead) return;
 
-                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
+                if ((Player.Instance.CountEnemyChampionsInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
                     if (Player.Instance.HealthPercent <= MiscMenu["Zhealth"].Cast<Slider>().CurrentValue)
                         Zhonyas.Cast();
             }

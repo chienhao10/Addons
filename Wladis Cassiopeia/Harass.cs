@@ -19,8 +19,8 @@ namespace Wladis_Cassiopeia
                 {
                     var prediction = SpellsManager.Q.GetPrediction(target);
                     if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                        Core.DelayAction(() => SpellsManager.Q.Cast(prediction.CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
-                    else SpellsManager.Q.Cast(prediction.CastPosition);
+                        Core.DelayAction(() => SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
+                    else SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition);
                 }
             
             if (Menus.HarassMenu["W"].Cast<CheckBox>().CurrentValue)
@@ -53,8 +53,8 @@ namespace Wladis_Cassiopeia
                 {
                     var prediction = SpellsManager.Q.GetPrediction(target);
                     if (HumanizerMenu["Humanize"].Cast<CheckBox>().CurrentValue)
-                        Core.DelayAction(() => SpellsManager.Q.Cast(prediction.CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
-                    else SpellsManager.Q.Cast(prediction.CastPosition);
+                        Core.DelayAction(() => SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition), HumanizerMenu["HumanizeQ"].Cast<Slider>().CurrentValue);
+                    else SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition);
                 }
         }
 

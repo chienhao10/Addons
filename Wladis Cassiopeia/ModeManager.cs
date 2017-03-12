@@ -27,7 +27,7 @@ namespace Wladis_Cassiopeia
                 Orbwalker.DisableAttacking = true;
             }
 
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) || (ComboMenu["AAOff"].Cast<CheckBox>().CurrentValue && Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) || (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) && !LaneClearMenu["ELastHit"].Cast<CheckBox>().CurrentValue)))
+            if ((Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) && HarassMenu["AAOffHarass"].Cast<CheckBox>().CurrentValue) || ((Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) && ComboMenu["AAOff"].Cast<CheckBox>().CurrentValue) || ((Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) && !LaneClearMenu["EAA"].Cast<CheckBox>().CurrentValue) || (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) && !LaneClearMenu["ELastHit"].Cast<CheckBox>().CurrentValue))))
             {
                 Orbwalker.DisableAttacking = false;
             }

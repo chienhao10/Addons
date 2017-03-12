@@ -57,7 +57,7 @@ namespace Wladis_Cassiopeia
             ComboMenu.AddSeparator();
             ComboMenu.Add("FlashR", new KeyBind("Use flash + R", false, KeyBind.BindTypes.HoldActive, 'G'));
             ComboMenu.AddSeparator();
-            ComboMenu.Add("AAOff", new CheckBox("Disable autoattacks in Combo", false));
+            ComboMenu.Add("AAOff", new CheckBox("Disable autoattacks in Combo"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("ComboLogic", new ComboBox(" Combo Logic ", 0, "W>Q>E", "Q>W>E"));
             ComboMenu.AddSeparator();
@@ -77,6 +77,7 @@ namespace Wladis_Cassiopeia
             HarassMenu.Add("W", new CheckBox("- Use W"));
             HarassMenu.Add("E", new CheckBox("- Use E"));
             HarassMenu.Add("ManaSlider", new Slider("- If mana is below [{0}%] don't use Harass", 40, 1, 100));
+            HarassMenu.Add("AAOffHarass", new CheckBox("Disable autoattacks in Harass mode"));
 
             HarassMenu.AddGroupLabel("Auto Harass");
             HarassMenu.Add("AutoQ", new CheckBox("- Use Q", false));
