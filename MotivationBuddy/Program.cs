@@ -24,7 +24,9 @@ namespace MotivationBuddy
         {
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
         }
-        
+
+        private static int lastlaugh;
+        private static int lastmastery;
 
 
         public static void Loading_OnLoadingComplete(EventArgs args)
@@ -45,6 +47,46 @@ namespace MotivationBuddy
 
         private static void Game_OnTick(EventArgs args)
         {
+            if (FirstMenu["Mastery"].Cast<CheckBox>().CurrentValue && lastmastery + 7000 < Environment.TickCount)
+            {
+                Chat.Say("/Masterybadge");
+                lastmastery = Environment.TickCount;
+            }
+
+            if (FirstMenu["Laugh"].Cast<CheckBox>().CurrentValue && lastlaugh + FirstMenu["LaughDelay"].Cast<Slider>().CurrentValue < Environment.TickCount)
+            {
+                Player.DoEmote(Emote.Laugh);
+                lastlaugh = Environment.TickCount;
+                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+                {
+                    Orbwalker.OrbwalkTo(Game.CursorPos);
+                    Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPos);
+                }
+            }
+
+            Chat.Print(lastlaugh);
+
+            if (FirstMenu["Spam"].Cast<KeyBind>().CurrentValue)
+            {
+                if (FirstMenu["SpamText"].Cast<ComboBox>().CurrentValue == 0)
+                    Chat.Say("/all Ez");
+
+                if (FirstMenu["SpamText"].Cast<ComboBox>().CurrentValue == 1)
+                    Chat.Say("/all GG");
+
+                if (FirstMenu["SpamText"].Cast<ComboBox>().CurrentValue == 2)
+                    Chat.Say("/all Bad");
+
+                if (FirstMenu["SpamText"].Cast<ComboBox>().CurrentValue == 3)
+                    Chat.Say("/all L2P");
+
+                if (FirstMenu["SpamText"].Cast<ComboBox>().CurrentValue == 4)
+                    Chat.Say("/all You suck");
+            }
+
+
+
+
         }
 
         internal static void OnGameNotify(GameNotifyEventArgs args)
@@ -80,7 +122,7 @@ namespace MotivationBuddy
                     case GameEventId.OnChampionDie:
                         if ((Sender == AllyD.NetworkId || Sender == AllyK.NetworkId) && Sender != myhero.NetworkId)
                         {
-                            string[] Motivation2 = { "Next time you get him!", "Nice try, next time maybe", "Don't get greedy", "Be less agressive", "Don't lose motivation", "Don't give up", "bad luck", "come on let's team fight" };
+                            string[] Motivation2 = { "Next time you get him!", "Nice try, next time maybe", "Don't get greedy", "Be less agressive", "Don't lose motivation", "Don't give up", "bad luck", "come on let's team fight", "We will win" };
 
                             Random RandName = new Random();
                             string Temp2 = Motivation2[RandName.Next(0, Motivation2.Length)];
@@ -93,7 +135,7 @@ namespace MotivationBuddy
             }
             if (FirstMenu["EnableT"].Cast<CheckBox>().CurrentValue)
             {
-                var Enemy = EntityManager.Heroes.Enemies.LastOrDefault(e => e.HealthPercent < 30 && !e.IsDead);
+                var Enemy = EntityManager.Heroes.Enemies.Where(e =>  !e.IsDead);
                 var EnemyD = EntityManager.Heroes.Enemies.FirstOrDefault(e => !e.IsDead);
                 var EnemyDD = EntityManager.Heroes.Enemies.First();
                 var EnemyDDD = EntityManager.Heroes.Enemies.Last();
@@ -105,9 +147,10 @@ namespace MotivationBuddy
                 switch (args.EventId)
                 {
                     case GameEventId.OnChampionDie:
-                        if (Sender == Enemy.NetworkId || Sender == EnemyD.NetworkId || Sender == EnemyDD.NetworkId || Sender == EnemyDDD.NetworkId || Sender != myhero.NetworkId)
+                        foreach (var Enemi in Enemy)
+                        if (Sender == Enemi.NetworkId)// || Sender == EnemyD.NetworkId || Sender == EnemyDD.NetworkId || Sender == EnemyDDD.NetworkId || Sender != myhero.NetworkId)
                         {
-                            string[] Tilt2 = { "/all You're bad", "/all You suck", "/all Nice try", "/all Go play against bots", "/all noob", "/all ez", "/All so bad", "/all learn 2 play", "/all hahahha", "/all bad", "/All rekt", "/All boosted", "/all wood V", "/all bronze V", "/all What is this elo", "/all xd", "/all so ez", "/all l2p","/all boring","/all salt", "/all tilt", "/all so bad lmao", "/all are you trolling or just bad?" };
+                            string[] Tilt2 = { "/all You're bad", "/all You suck", "/all Nice try", "/all Go play against bots", "/all noob", "/all ez", "/All so bad", "/all learn 2 play", "/all hahahha", "/all bad", "/All rekt", "/All boosted", "/all wood V", "/all bronze V", "/all What is this elo", "/all xd", "/all so ez", "/all l2p","/all boring","/all salt", "/all tilt", "/all so bad lmao", "/all are you trolling or just bad?", "/all Is this Co-op vs all or what?", "/all Get outta my jungle", "/all cy@"};
 
                             Random RandName = new Random();
                             string Temp2 = Tilt2[RandName.Next(0, Tilt2.Length)];

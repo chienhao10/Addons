@@ -10,3 +10,4 @@ C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\MotivationBuddy\Motivatio
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\MotivationBuddy\MotivationBuddy\bin\Release\Newtonsoft.Json.dll
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\MotivationBuddy\MotivationBuddy\obj\Release\MotivationBuddy.exe
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\MotivationBuddy\MotivationBuddy\obj\Release\MotivationBuddy.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\MotivationBuddy\MotivationBuddy\obj\Release\MotivationBuddy.csprojResolveAssemblyReference.cache
