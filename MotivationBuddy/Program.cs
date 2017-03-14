@@ -63,8 +63,7 @@ namespace MotivationBuddy
                     Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPos);
                 }
             }
-
-            Chat.Print(lastlaugh);
+            
 
             if (FirstMenu["Spam"].Cast<KeyBind>().CurrentValue)
             {
