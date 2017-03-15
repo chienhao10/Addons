@@ -19,7 +19,7 @@ namespace Dark_Syndra
         
         public static void InitializeSpells()
         {
-            Q = new Spell.Skillshot(SpellSlot.Q, 820, SkillShotType.Circular, 550, int.MaxValue, 125)
+            Q = new Spell.Skillshot(SpellSlot.Q, 800, SkillShotType.Circular, 550, int.MaxValue, 125)
             {
                 AllowedCollisionCount = int.MaxValue
             };
@@ -27,13 +27,13 @@ namespace Dark_Syndra
             {
                 AllowedCollisionCount = int.MaxValue
             };
-            E = new Spell.Skillshot(SpellSlot.E, 670, SkillShotType.Cone, 250, 2500, 50)
+            E = new Spell.Skillshot(SpellSlot.E, 700, SkillShotType.Cone, 250, 2500, 50)
             {
                 AllowedCollisionCount = int.MaxValue
             };
-            R = new Spell.Targeted(SpellSlot.R, 675);
+            R = new Spell.Targeted(SpellSlot.R, 700);
 
-            QE = new Spell.Skillshot(SpellSlot.E, 1150, SkillShotType.Linear, 600, 2400, 18)
+            QE = new Spell.Skillshot(SpellSlot.E, Q.Range + E.Range, SkillShotType.Linear, 600, 2400, 18)
             {
                 AllowedCollisionCount = int.MaxValue
             };
@@ -58,15 +58,15 @@ namespace Dark_Syndra
                     break;
                 case SpellSlot.W:
                     if (W.IsReady())
-                        dmg += new float[] { 80, 120, 160, 200, 240 }[sLevel] + 0.8f * ap;
+                        dmg += new float[] { 80, 120, 160, 200, 240 }[sLevel] + 0.7f * ap;
                     break;
                 case SpellSlot.E:
                     if (E.IsReady())
-                        dmg += new float[] { 60 , 105 , 150 , 195 , 240 }[sLevel] + 0.6f * ap;
+                        dmg += new float[] { 70 , 115 , 160 , 205 , 250 }[sLevel] + 0.4f * ap;
                     break;
                         case SpellSlot.R:
                          if (R.IsReady())
-                         dmg += new float[] { 300, 400, 500 }[sLevel] + 0.6f * ap * (BallsCount());
+                         dmg += new float[] { 270, 405, 540 }[sLevel] + 0.6f * ap + (BallsCount() + 0.2f * ap);
                         break;
             }
             return Player.Instance.CalculateDamageOnUnit(target, damageType, dmg - 10);

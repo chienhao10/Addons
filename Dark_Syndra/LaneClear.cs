@@ -1,12 +1,15 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
+using System;
 using System.Linq;
+using static Dark_Syndra.Combo;
 
 namespace Dark_Syndra
 {
     internal static class LaneClear
     {
+        private static int lastWCast;
         public static void Execute2()
         {
             var minions =
@@ -33,8 +36,17 @@ namespace Dark_Syndra
                 var predictedMinion = farmLocation.GetCollisionObjects<Obj_AI_Minion>();
                 if (predictedMinion.Length >= 2)
                 {
-                    SpellsManager.W.Cast(Functions.GrabWPostt(true));
+                    if (!myhero.HasBuff("SyndraW") && lastWCast + 500 < Environment.TickCount)
+                    {
+                        SpellsManager.W.Cast(Functions.GrabWPost(true));
+                        lastWCast = Environment.TickCount;
+                    }
+                    if (myhero.HasBuff("SyndraW") && lastWCast + 200 < Environment.TickCount)
+                    {
                         SpellsManager.W.Cast(farmLocation.CastPosition);
+                        lastWCast = Environment.TickCount;
+
+                    }
 
                 }
             }

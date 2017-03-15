@@ -9,7 +9,7 @@ namespace Dark_Syndra
         public static void Execute10()
         {
 
-            if (Menus.FleeMenu["E"].Cast<CheckBox>().CurrentValue)
+            if (Menus.FleeMenu["Q"].Cast<CheckBox>().CurrentValue)
                 if (SpellsManager.Q.IsReady() && SpellsManager.E.IsReady())
                 {
                     SpellsManager.Q.Cast(Game.CursorPos);

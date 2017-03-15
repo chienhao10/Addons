@@ -52,9 +52,8 @@ namespace Dark_Syndra
                 : DrawingsMenu["qeDraw"].Cast<CheckBox>().CurrentValue)
                 Circle.Draw(EColorSlide.GetSharpColor(), QE.Range, 1f, Player.Instance);
 
-            if (target == null) return;
-            if (!(target.Health <=
-                  target.GetTotalDamage())) return;
+            if (target == null || target.Health >
+                  target.GetTotalDamage()) return;
             Drawing.DrawText(Drawing.WorldToScreen(target.Position).X - 60,
                 Drawing.WorldToScreen(target.Position).Y + 10,
                 Color.Gold, "Killable with Combo");

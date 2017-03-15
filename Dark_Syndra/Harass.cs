@@ -2,6 +2,7 @@
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 using System;
+using static Dark_Syndra.Combo;
 
 namespace Dark_Syndra
 {
@@ -13,58 +14,41 @@ namespace Dark_Syndra
         public static void Execute1()
         {
 
-            var qtarget = TargetSelector.GetTarget(SpellsManager.Q.Range, DamageType.Magical);
+            var target = TargetSelector.GetTarget(SpellsManager.W.Range, DamageType.Magical);
 
-            if ((qtarget == null) || qtarget.IsInvulnerable)
+            if ((target == null) || target.IsInvulnerable)
                 return;
             //Cast Q
-            if (Menus.HarassMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (qtarget.IsValidTarget(SpellsManager.Q.Range) && SpellsManager.Q.IsReady())
-                    SpellsManager.Q.Cast(qtarget);
+            if (Menus.HarassMenu["Q"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.Q.Range) && SpellsManager.Q.IsReady())
+                    SpellsManager.Q.Cast(target);
 
-            var wtarget = TargetSelector.GetTarget(SpellsManager.W.Range, DamageType.Magical);
+            //cast Q - E
+            if (Menus.HarassMenu["Qe"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.QE.Range) && SpellsManager.Q.IsReady() && SpellsManager.E.IsReady())
+            {
+                var pred = SpellsManager.Q.GetPrediction(target);
+                SpellsManager.Q.Cast(Player.Instance.Position.Extend(pred.CastPosition, SpellsManager.E.Range - 10).To3D());
+                SpellsManager.E.Cast(Player.Instance.Position.Extend(pred.CastPosition, SpellsManager.E.Range - 10).To3D());
 
-            if ((wtarget == null) || wtarget.IsInvulnerable)
-                return;
+            }
+
             //Cast W
-            if (Menus.HarassMenu["W"].Cast<CheckBox>().CurrentValue)
-                if (wtarget.IsValidTarget(SpellsManager.W.Range) && SpellsManager.W.IsReady())
+            if (Menus.HarassMenu["W"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.W.Range) && SpellsManager.W.IsReady())
                 {
-                    var pred = SpellsManager.W.GetPrediction(wtarget);
+                    var pred = SpellsManager.W.GetPrediction(target);
 
-                    if (Player.Instance.Spellbook.GetSpell(SpellSlot.W).ToggleState != 2 &&
-                        lastWCast + 700 < Environment.TickCount)
+                    if (!myhero.HasBuff("SyndraW") && lastWCast + 500 < Environment.TickCount)
                     {
                         SpellsManager.W.Cast(Functions.GrabWPost(true));
                         lastWCast = Environment.TickCount;
                     }
-                    if (Player.Instance.Spellbook.GetSpell(SpellSlot.W).ToggleState >= 1 &&
-                        lastWCast + 300 < Environment.TickCount)
+                    if (myhero.HasBuff("SyndraW") && lastWCast + 200 < Environment.TickCount)
                     {
                         SpellsManager.W.Cast(pred.CastPosition);
+                        lastWCast = Environment.TickCount;
+
                     }
                 }
             
         }
-
-
-
-        /*
-        //Summoners Target
-        var Summ1 = TargetSelector.GetTarget(Smite.Range, DamageType.Mixed);
-        var Summ2 = TargetSelector.GetTarget(Ignite.Range, DamageType.Mixed);
-        if ((Summ1 == null) || Summ1.IsInvulnerable)
-            return;
-        //Cast Smite
-        if (ComboMenu["Smite"].Cast<CheckBox>().CurrentValue)
-            if (Summ1.IsValidTarget(Smite.Range) && Smite.IsReady())
-                Smite.Cast(Smite.GetKillableHero());
-        if ((Summ2 == null) || Summ2.IsInvulnerable)
-            return;
-        //Cast Ignite
-        if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
-            if (Summ2.IsValidTarget(Ignite.Range) && Ignite.IsReady())
-                Ignite.Cast(Ignite.GetKillableHero());
-        */
     }
 }

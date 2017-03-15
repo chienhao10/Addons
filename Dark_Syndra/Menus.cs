@@ -95,7 +95,7 @@ namespace Dark_Syndra
 
 
             FleeMenu.AddGroupLabel("Flee Settings");
-            FleeMenu.Add("E", new CheckBox("- Use Q - E to cursor position"));
+            FleeMenu.Add("QE", new CheckBox("- Use Q - E to cursor position"));
             FleeMenu.AddLabel("* The cursor must be inside of the E range");
             MiscMenu.AddGroupLabel("Misc");
             MiscMenu.Add("Interrupt", new CheckBox("- Interrupt"));
