@@ -1,0 +1,12 @@
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\Wladis Teemo.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\Wladis Teemo.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\Wladis Teemo.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\bin\Release\EloBuddy.Sandbox.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\obj\Release\Wladis Teemo.csprojResolveAssemblyReference.cache
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\obj\Release\Wladis Teemo.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Teemo\Wladis Teemo\obj\Release\Wladis Teemo.pdb
