@@ -26,25 +26,20 @@ namespace Dark_Syndra
             }
         }
 
-        private static void Gapcloser_OnGapcloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
+        private static void Gapcloser_OnGapcloser(Obj_AI_Base sender, Gapcloser.GapcloserEventArgs args)
         {
-            if (Menus.MiscMenu["Gapcloser"].Cast<CheckBox>().CurrentValue)
-            if (!sender.IsEnemy) return;
-
-            if (sender.IsValidTarget(SpellsManager.E.Range))
+            if (sender.IsEnemy && sender is AIHeroClient && SpellsManager.E.IsReady() && Menus.MiscMenu["GapCloser"].Cast<CheckBox>().CurrentValue)
             {
                 SpellsManager.E.Cast(sender.Position);
             }
         }
 
-        private static void Interrupter_OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs e)
+        private static void Interrupter_OnInterruptableSpell(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs args)
         {
-            if (Menus.MiscMenu["Interrupt"].Cast<CheckBox>().CurrentValue)
-                if (!sender.IsEnemy) return;
 
-            if (e.DangerLevel == DangerLevel.High && sender.IsValidTarget(SpellsManager.E.Range))
+            if (args.DangerLevel == DangerLevel.High && sender.IsEnemy && sender is AIHeroClient && SpellsManager.E.IsReady() && Menus.MiscMenu["Interrupt"].Cast<CheckBox>().CurrentValue)
             {
-                SpellsManager.E.Cast(sender.Position);
+                SpellsManager.E.Cast(sender);
             }
         }
     }

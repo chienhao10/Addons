@@ -52,8 +52,7 @@ namespace Dark_Syndra
             }
 
 
-            if (Menus.LaneClearMenu["E"].Cast<CheckBox>().CurrentValue)
-                if (SpellsManager.E.IsReady())
+            if (Menus.LaneClearMenu["E"].Cast<CheckBox>().CurrentValue && SpellsManager.E.IsReady())
                     SpellsManager.E.CastOnBestFarmPosition();
 
         }

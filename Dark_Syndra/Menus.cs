@@ -57,10 +57,6 @@ namespace Dark_Syndra
             ComboMenu.AddSeparator();
             ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
-            //ComboMenu.AddGroupLabel("Summoner Settings");
-            //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
-            //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
-
             HarassMenu.AddGroupLabel("Harass Settings");
             HarassMenu.Add("Q", new CheckBox("- Use Q"));
             HarassMenu.Add("W", new CheckBox("- Use W"));
@@ -71,8 +67,6 @@ namespace Dark_Syndra
             HarassMenu.Add("AutoQ", new CheckBox("- Q",false));
             HarassMenu.Add("AutoW", new CheckBox("- W", false));
             HarassMenu.AddLabel("*Thick this and it will Q and W from itself*");
-            //HarassMenu.AddLabel("*Autoharass will come soon*");
-            //HarassMenu.AddLabel("*Autoharass will come soon*");
 
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
@@ -95,8 +89,7 @@ namespace Dark_Syndra
 
 
             FleeMenu.AddGroupLabel("Flee Settings");
-            FleeMenu.Add("QE", new CheckBox("- Use Q - E to cursor position"));
-            FleeMenu.AddLabel("* The cursor must be inside of the E range");
+            FleeMenu.Add("QE", new CheckBox("- QE on enemy"));
             MiscMenu.AddGroupLabel("Misc");
             MiscMenu.Add("Interrupt", new CheckBox("- Interrupt"));
             MiscMenu.Add("Gapcloser", new CheckBox("- Gapcloser"));
