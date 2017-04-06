@@ -59,33 +59,6 @@ namespace Wladis_Ahri
             
 
         }
-        public static void ExecuteKillsteal()
-        {
-            foreach (var Enemy in EntityManager.Heroes.Enemies.Where(e => !e.IsDead && e.IsValidTarget(SpellsManager.Q.Range)))
-            {
-                if ((Enemy == null) || Enemy.IsInvulnerable)
-                    return;
-
-                if (KillStealMenu["Q"].Cast<CheckBox>().CurrentValue && SpellsManager.Q.IsReady() && Enemy.Health < Enemy.GetRealDamage(SpellSlot.Q) && Enemy.IsValidTarget(SpellsManager.Q.Range))
-                {
-                    var prediction = SpellsManager.Q.GetPrediction(Enemy);
-                    SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(Enemy).CastPosition);
-                }
-
-                if (KillStealMenu["E"].Cast<CheckBox>().CurrentValue && SpellsManager.E.IsReady() && Enemy.IsValidTarget(SpellsManager.E.Range) && Enemy.Health < Enemy.GetRealDamage(SpellSlot.E))
-                {
-                    var prediction = SpellsManager.E.GetPrediction(Enemy);
-                    SpellsManager.E.Cast(SpellsManager.Q.GetPrediction(Enemy).CastPosition);
-                }
-
-                if (KillStealMenu["W"].Cast<CheckBox>().CurrentValue && SpellsManager.W.IsReady() && Enemy.IsValidTarget(SpellsManager.W.Range) && Enemy.Health < Enemy.GetRealDamage(SpellSlot.W))
-                {
-                    SpellsManager.W.Cast();
-                }
-
-            }
-
-        }
 
         public static void ExecuteZhonyas()
         {

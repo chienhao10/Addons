@@ -43,7 +43,7 @@ namespace Wladis_Ahri
             foreach (var Enemy in EntityManager.Heroes.Enemies.Where(e => !e.IsDead && e.IsValidTarget(SpellsManager.Q.Range)))
             {
                 if ((Enemy == null) || Enemy.IsInvulnerable)
-                    return;a
+                    return;
 
                 if (HarassMenu["AutoQ"].Cast<CheckBox>().CurrentValue && SpellsManager.Q.IsReady() && Enemy.IsValidTarget(SpellsManager.Q.Range))
                 {

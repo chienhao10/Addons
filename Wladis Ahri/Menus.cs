@@ -18,7 +18,6 @@ namespace Wladis_Ahri
         public static Menu HarassMenu;
         public static Menu LaneClearMenu;
         public static Menu MiscMenu;
-        public static Menu KillStealMenu;
 
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
@@ -34,7 +33,6 @@ namespace Wladis_Ahri
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             HarassMenu = FirstMenu.AddSubMenu("• Harass");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
-            KillStealMenu = FirstMenu.AddSubMenu("• Killsteal");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuId);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuId);
 
@@ -73,11 +71,6 @@ namespace Wladis_Ahri
             LaneClearMenu.AddGroupLabel("Jungle steal Settings");
             LaneClearMenu.Add("QSteal", new CheckBox("- Steal jungle with Q"));
             LaneClearMenu.Add("ESteal", new CheckBox("- Steal jungle with E"));
-
-            KillStealMenu.AddGroupLabel("Killsteal Settings");
-            KillStealMenu.Add("Q", new CheckBox("- Use Q"));
-            KillStealMenu.Add("W", new CheckBox("- Use W"));
-            KillStealMenu.Add("E", new CheckBox("- Use E"));
 
             MiscMenu.AddGroupLabel("Misc");
             MiscMenu.Add("Z", new CheckBox("- Use Zhonyas"));

@@ -39,9 +39,7 @@ namespace Wladis_Ahri
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LaneClear) && LaneClearMenu["ManaSliderLaneClear"].Cast<Slider>().CurrentValue < myhero.Mana)
                 LaneClear.ExecuteLaneclear();
-
-            if (KillStealMenu["Q"].Cast<CheckBox>().CurrentValue || KillStealMenu["W"].Cast<CheckBox>().CurrentValue || KillStealMenu["E"].Cast<CheckBox>().CurrentValue)
-                Combo.ExecuteKillsteal();
+            
 
             if (MiscMenu["Z"].Cast<CheckBox>().CurrentValue && Player.Instance.HealthPercent <= MiscMenu["Zhealth"].Cast<Slider>().CurrentValue)
                 Combo.ExecuteZhonyas();
