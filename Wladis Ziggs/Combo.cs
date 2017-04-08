@@ -31,14 +31,14 @@ namespace Wladis_Ziggs
                 {
                     if (ComboMenu["RSlider"].Cast<Slider>().CurrentValue == 1)
                         SpellsManager.R.Cast(prediction.CastPosition);
-                    else if (rtarget.CountEnemiesInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
+                    else if (rtarget.CountEnemyChampionsInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
                         SpellsManager.R.Cast(prediction.CastPosition);
                 }
                 if (ComboMenu["RPrediction"].Cast<ComboBox>().CurrentValue == 0)
                 {
                     if (ComboMenu["RSlider"].Cast<Slider>().CurrentValue == 1)
                         SpellsManager.R.Cast(target.Position);
-                    else if (rtarget.CountEnemiesInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
+                    else if (rtarget.CountEnemyChampionsInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
                         SpellsManager.R.Cast(target.Position);
                 }
                 }
@@ -70,7 +70,7 @@ namespace Wladis_Ziggs
                 return;
             //Ignite
             if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range) && target.HealthPercent <= ComboMenu["IgniteHealth"].Cast<Slider>().CurrentValue)
+                if (Player.Instance.CountEnemyChampionsInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ.IsValidTarget(Ignite.Range) && target.HealthPercent <= ComboMenu["IgniteHealth"].Cast<Slider>().CurrentValue)
                     if (target.Health >
                   target.GetRealDamage())
                         Ignite.Cast(Summ);
@@ -82,7 +82,7 @@ namespace Wladis_Ziggs
             {
                 if (Player.Instance.IsDead) return;
 
-                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
+                if ((Player.Instance.CountEnemyChampionsInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
                     if (Player.Instance.HealthPercent <= MiscMenu["Zhealth"].Cast<Slider>().CurrentValue)
                         Zhonyas.Cast();
             }

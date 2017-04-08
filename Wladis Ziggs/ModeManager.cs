@@ -86,7 +86,7 @@ namespace Wladis_Ziggs
 
                     if (ComboMenu["RSlider"].Cast<Slider>().CurrentValue == 1)
                         SpellsManager.R.Cast(prediction.CastPosition);
-                    else if (rtarget.CountEnemiesInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
+                    else if (rtarget.CountEnemyChampionsInRange(400) == ComboMenu["RSlider"].Cast<Slider>().CurrentValue - 1)
                         SpellsManager.R.Cast(prediction.CastPosition);
             }
 

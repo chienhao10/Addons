@@ -10,7 +10,6 @@ namespace Wladis_Ziggs
 {
     internal class Menus
     {
-        public static SharpDX.Vector3 insecpos, eqpos, movingawaypos, qpos;
         public const string DrawingsMenuId = "drawingsmenuid";
         public const string MiscMenuId = "miscmenuid";
         public static Menu FirstMenu;

@@ -1,0 +1,11 @@
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\Wladis Gragas.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\Wladis Gragas.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\Wladis Gragas.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Ziggs.csprojResolveAssemblyReference.cache
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Gragas.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Gragas.pdb
