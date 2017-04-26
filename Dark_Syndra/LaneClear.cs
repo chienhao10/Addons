@@ -38,7 +38,7 @@ namespace Dark_Syndra
                 {
                     if (!myhero.HasBuff("SyndraW") && lastWCast + 500 < Environment.TickCount)
                     {
-                        SpellsManager.W.Cast(Functions.GrabWPost(true));
+                        SpellsManager.W.Cast(Functions.GrabWPost());
                         lastWCast = Environment.TickCount;
                     }
                     if (myhero.HasBuff("SyndraW") && lastWCast + 200 < Environment.TickCount)
@@ -70,7 +70,7 @@ namespace Dark_Syndra
 
             if (SpellsManager.W.IsReady() && SpellsManager.W.IsInRange(jungleMonsters) && Menus.LaneClearMenu["WJungle"].Cast<CheckBox>().CurrentValue)
             {
-                SpellsManager.W.Cast(Functions.GrabWPostt(true));
+                SpellsManager.W.Cast(Functions.GrabWPostt());
                 SpellsManager.W.Cast(jungleMonsters);
             }
             if (SpellsManager.E.IsReady() && SpellsManager.E.IsInRange(jungleMonsters) && Menus.LaneClearMenu["EJungle"].Cast<CheckBox>().CurrentValue)

@@ -9,10 +9,10 @@ namespace Dark_Syndra
     internal class Functions
     {
 
-        public static Vector3 GrabWPost(bool onlyQ)
+        public static Vector3 GrabWPost()
         {
             var sphere =
-                ObjectManager.Get<Obj_AI_Base>().FirstOrDefault(a => a.Name == "Seed" && a.IsValid);
+                ObjectManager.Get<Obj_AI_Base>().FirstOrDefault(a => a.BaseSkinName == "SyndraSphere" && a.IsValid);
             if (sphere != null)
             {
                 return sphere.Position;
@@ -41,7 +41,7 @@ namespace Dark_Syndra
             }
         }
 
-        public static Vector3 GrabWPostt(bool onlyQ)
+        public static Vector3 GrabWPostt()
         {
             if (Menus.LaneClearMenu["W"].Cast<CheckBox>().CurrentValue)
             {

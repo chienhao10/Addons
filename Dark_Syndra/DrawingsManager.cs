@@ -1,11 +1,12 @@
 ﻿using System;
 using EloBuddy;
 using EloBuddy.SDK.Rendering;
+using System.Drawing;
+using EloBuddy.SDK;
 using static Dark_Syndra.Menus;
 using static Dark_Syndra.SpellsManager;
-using System.Drawing;
 using EloBuddy.SDK.Menu.Values;
-using EloBuddy.SDK;
+using System.Linq;
 
 namespace Dark_Syndra
 
@@ -26,6 +27,7 @@ namespace Dark_Syndra
         {
             var readyDraw = DrawingsMenu["readyDraw"].Cast<CheckBox>().CurrentValue;
             var target = TargetSelector.GetTarget(SpellsManager.E.Range + 20000, DamageType.Mixed);
+            // var sphere = ObjectManager.Get<Obj_AI_Base>().Count(a => a.Name == "Seed" && a.IsValid && !a.IsDead);
             //Drawings
             if (DrawingsMenu["qDraw"].Cast<CheckBox>().CurrentValue && readyDraw
                 ? Q.IsReady()
@@ -60,6 +62,13 @@ namespace Dark_Syndra
         }
 
 
+        public static void DrawText(string msg, AIHeroClient Hero, Color color)
+        {
+            var wts = Drawing.WorldToScreen(Hero.Position);
+            Drawing.DrawText(wts[0] - (msg.Length) * 5, wts[1], color, msg);
+
+
+        }
 
         private static void Drawing_OnEndScene(EventArgs args)
         {

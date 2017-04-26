@@ -3,6 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 using static Dark_Syndra.Menus;
+using static Dark_Syndra.DrawingsManager;
 
 namespace Dark_Syndra
 {
@@ -51,7 +52,7 @@ namespace Dark_Syndra
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))
                 LaneClear.JungleClear();
-
+            
 
         }
     }

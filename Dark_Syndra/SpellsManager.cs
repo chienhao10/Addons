@@ -33,7 +33,7 @@ namespace Dark_Syndra
             };
             R = new Spell.Targeted(SpellSlot.R, 700);
 
-            QE = new Spell.Skillshot(SpellSlot.E, Q.Range + E.Range, SkillShotType.Linear, 600, 2400, 18)
+            QE = new Spell.Skillshot(SpellSlot.E, Q.Range + 450, SkillShotType.Linear, 600, 2400, 18)
             {
                 AllowedCollisionCount = int.MaxValue
             };
@@ -86,7 +86,7 @@ namespace Dark_Syndra
         }
         public static int BallsCount()
         {
-            return ObjectManager.Get<Obj_AI_Base>().Count(a => a.Name == "Seed" && a.IsValid);
+            return ObjectManager.Get<Obj_AI_Base>().Count(a => a.Name == "Seed" && a.IsValid && !a.IsDead);
         }
 
         public static float GetTotalDamage(this Obj_AI_Base target)

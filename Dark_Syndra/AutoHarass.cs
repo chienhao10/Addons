@@ -36,7 +36,7 @@ namespace Dark_Syndra
 
                 if (!myhero.HasBuff("SyndraW") && lastWCast + 500 < Environment.TickCount)
                 {
-                    SpellsManager.W.Cast(Functions.GrabWPost(true));
+                    SpellsManager.W.Cast(Functions.GrabWPost());
                     lastWCast = Environment.TickCount;
                 }
                 if (myhero.HasBuff("SyndraW") && lastWCast + 200 < Environment.TickCount)

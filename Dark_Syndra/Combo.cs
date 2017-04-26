@@ -18,7 +18,8 @@ namespace Dark_Syndra
 
         public static void Execute()
         {
-            var sphere = ObjectManager.Get<Obj_AI_Base>().FirstOrDefault(a => a.Name == "Seed" && a.IsValid);
+            
+
 
             var target = TargetSelector.GetTarget(SpellsManager.W.Range, DamageType.Magical);
 
@@ -53,7 +54,7 @@ namespace Dark_Syndra
 
                 if (!myhero.HasBuff("SyndraW") && lastWCast + 500 < Environment.TickCount)
                 {
-                    SpellsManager.W.Cast(Functions.GrabWPost(true));
+                    SpellsManager.W.Cast(Functions.GrabWPost());
                     lastWCast = Environment.TickCount;
                 }
                 if (myhero.HasBuff("SyndraW") && lastWCast + 200 < Environment.TickCount)

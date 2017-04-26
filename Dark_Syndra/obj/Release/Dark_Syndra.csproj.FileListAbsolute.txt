@@ -9,4 +9,3 @@ C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Dark_Syndra\Dark_Syndra\b
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Dark_Syndra\Dark_Syndra\bin\Release\SharpDX.Direct3D9.dll
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Dark_Syndra\Dark_Syndra\bin\Release\SharpDX.dll
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Dark_Syndra\Dark_Syndra\bin\Release\Newtonsoft.Json.dll
-C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Dark_Syndra\Dark_Syndra\bin\Release\EloBuddy.Sandbox.dll
