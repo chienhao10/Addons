@@ -10,4 +10,3 @@ C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Sora
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\Newtonsoft.Json.dll
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\obj\Release\Wladis Soraka.exe
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\obj\Release\Wladis Soraka.pdb
-C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\EloBuddy.Sandbox.dll

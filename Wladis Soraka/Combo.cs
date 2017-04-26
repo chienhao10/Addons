@@ -48,14 +48,15 @@ namespace Wladis_Soraka
                 SpellsManager.W.Cast(sdl);
             }
             
-            var sdlR = EntityManager.Heroes.Allies.FirstOrDefault(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie && hero.Distance(myhero) <= SpellsManager.R.Range);
+            var sdlR = EntityManager.Heroes.Allies.Where(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie && hero.Distance(myhero) <= SpellsManager.R.Range);
 
-            if (SpellsManager.R.IsReady() && HealMenu["R"].Cast<CheckBox>().CurrentValue && sdlR.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && sdlR.CountEnemiesInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
+            foreach (var ally in sdlR)
+            if (SpellsManager.R.IsReady() && HealMenu["R"].Cast<CheckBox>().CurrentValue && ally.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && ally.CountEnemyChampionsInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
             {
                 SpellsManager.R.Cast();
             }
 
-            if (SpellsManager.R.IsReady() && HealMenu["RYou"].Cast<CheckBox>().CurrentValue && myhero.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && myhero.CountEnemiesInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
+            if (SpellsManager.R.IsReady() && HealMenu["RYou"].Cast<CheckBox>().CurrentValue && myhero.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && myhero.CountEnemyChampionsInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
             {
                 SpellsManager.R.Cast();
             }

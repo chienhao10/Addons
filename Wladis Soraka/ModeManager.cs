@@ -23,9 +23,9 @@ namespace Wladis_Soraka
         private static void Game_OnTick(EventArgs args)
         {
             var orbMode = Orbwalker.ActiveModesFlags;
-            var sdl = EntityManager.Heroes.Allies.FirstOrDefault(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie && hero.IsInRange(myhero, SpellsManager.W.Range));
+            var sdl = EntityManager.Heroes.Allies.Where(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie && hero.IsInRange(myhero, SpellsManager.W.Range));
             var playerMana = Player.Instance.ManaPercent;
-            var enemy = EntityManager.Heroes.Enemies.FirstOrDefault(hero => !hero.IsDead && !hero.IsZombie && hero.IsInRange(myhero, SpellsManager.E.Range));
+            var enemy = EntityManager.Heroes.Enemies.Where(hero => !hero.IsDead && !hero.IsZombie && hero.IsInRange(myhero, SpellsManager.E.Range));
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();
@@ -45,16 +45,19 @@ namespace Wladis_Soraka
             if (HealMenu["AutoW"].Cast<CheckBox>().CurrentValue)
                 HealSettings.Execute6();
 
-            if (sdl.IsInRange(myhero, SpellsManager.W.Range))
-            {
-                if (HealMenu["SpeedBuff"].Cast<CheckBox>().CurrentValue && HealMenu["SpeedBuffFlee"].Cast<CheckBox>().CurrentValue && enemy.IsFleeing && enemy.IsInRange(myhero, SpellsManager.E.Range) && SpellsManager.W.IsReady() && !sdl.HasBuff("SorakaQRegen") && myhero.HasBuff("SorakaQRegen"))
+            foreach (var ally in sdl) foreach (var enemie in enemy)
                 {
-                    SpellsManager.W.Cast(sdl);
-                }
+                if (ally.IsInRange(myhero, SpellsManager.W.Range))
+                {
+                    if (HealMenu["SpeedBuff"].Cast<CheckBox>().CurrentValue && HealMenu["SpeedBuffFlee"].Cast<CheckBox>().CurrentValue && enemie.IsInRange(myhero, SpellsManager.E.Range) && SpellsManager.W.IsReady() && !ally.HasBuff("SorakaQRegen") && myhero.HasBuff("SorakaQRegen"))
+                    {
+                        SpellsManager.W.Cast(ally);
+                    }
 
-                if (HealMenu["SpeedBuff"].Cast<CheckBox>().CurrentValue && HealMenu["SpeedBuffEnemy"].Cast<CheckBox>().CurrentValue && enemy.IsInRange(myhero, SpellsManager.E.Range) && SpellsManager.W.IsReady() && !sdl.HasBuff("SorakaQRegen") && myhero.HasBuff("SorakaQRegen"))
-                {
-                    SpellsManager.W.Cast(sdl);
+                    if (HealMenu["SpeedBuff"].Cast<CheckBox>().CurrentValue && HealMenu["SpeedBuffEnemy"].Cast<CheckBox>().CurrentValue && enemie.IsInRange(myhero, SpellsManager.E.Range) && SpellsManager.W.IsReady() && !ally.HasBuff("SorakaQRegen") && myhero.HasBuff("SorakaQRegen"))
+                    {
+                        SpellsManager.W.Cast(ally);
+                    }
                 }
             }
 

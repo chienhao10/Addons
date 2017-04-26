@@ -23,7 +23,7 @@ namespace Wladis_Soraka
 
         private static void Drawing_OnDraw(EventArgs args)
         {
-            var sdl = EntityManager.Heroes.Allies.FirstOrDefault(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie);
+            var sdl = EntityManager.Heroes.Allies.Where(hero => !hero.IsMe && !hero.IsInShopRange() && !hero.IsZombie);
             var readyDraw = DrawingsMenu["readyDraw"].Cast<CheckBox>().CurrentValue;
             var target = TargetSelector.GetTarget(R.Range, DamageType.Mixed);
             //Drawings
@@ -43,7 +43,8 @@ namespace Wladis_Soraka
                 : DrawingsMenu["eDraw"].Cast<CheckBox>().CurrentValue)
                 Circle.Draw(EColorSlide.GetSharpColor(), E.Range, 1f, Player.Instance);
 
-            if (sdl.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && HealMenu["Rtext"].Cast<CheckBox>().CurrentValue && R.IsReady() && sdl.CountEnemiesInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
+            foreach (var ally in sdl) 
+            if (ally.HealthPercent < HealMenu["RAllyHealth"].Cast<Slider>().CurrentValue && HealMenu["Rtext"].Cast<CheckBox>().CurrentValue && R.IsReady() && ally.CountEnemyChampionsInRange(HealMenu["REnemyInRange"].Cast<Slider>().CurrentValue) >= 1)
             Drawing.DrawText(Drawing.WorldToScreen(myhero.Position).X - 60,
                 Drawing.WorldToScreen(myhero.Position).Y + 10,
                 Color.Gold, "Ally need R");

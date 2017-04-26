@@ -64,14 +64,14 @@ namespace Wladis_Soraka
 
             HealMenu.AddGroupLabel("- W- settings");
             HealMenu.Add("AutoW", new CheckBox("- Auto W"));
-            HealMenu.Add("WAllyHealth", new Slider("- Use W if ally health % < X", 60, 1, 100));
-            HealMenu.Add("Myhealth", new Slider("- Use W if my health % > X", 30, 1, 100));
+            HealMenu.Add("WAllyHealth", new Slider("- Use W if ally health < [{0}%]", 60, 1, 100));
+            HealMenu.Add("Myhealth", new Slider("- Use W if my health > [{0}%]", 30, 1, 100));
             HealMenu.AddGroupLabel("Ult Settings");
             HealMenu.Add("R", new CheckBox("- Use R"));
             HealMenu.Add("Rtext", new CheckBox("- draw text [Ally need R]"));
             HealMenu.Add("RYou", new CheckBox("- Use R for yourself, too", false));
-            HealMenu.Add("RAllyHealth", new Slider("- Use R if ally health % < X", 20, 1, 100));
-            HealMenu.Add("REnemyInRange", new Slider("- Use R if ally has enemy inrange < X", 550, 1, 1500));
+            HealMenu.Add("RAllyHealth", new Slider("- Use R if ally health < [{0}%]", 20, 1, 100));
+            HealMenu.Add("REnemyInRange", new Slider("- Use R if ally has enemy inrange of [{0}]", 550, 1, 1500));
             HealMenu.AddLabel("For Example : 550 = Soraka W range");
             HealMenu.AddSeparator(5);
             HealMenu.Add("SpeedBuff", new CheckBox("- W to give ally speed buff", false));
