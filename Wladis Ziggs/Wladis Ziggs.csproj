@@ -7,8 +7,8 @@
     <ProjectGuid>{F9E14DF8-5D7F-497D-ABAA-862E04CCB954}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wladis_Gragas</RootNamespace>
-    <AssemblyName>Wladis Gragas</AssemblyName>
+    <RootNamespace>Wladis_Ziggs</RootNamespace>
+    <AssemblyName>Wladis Ziggs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

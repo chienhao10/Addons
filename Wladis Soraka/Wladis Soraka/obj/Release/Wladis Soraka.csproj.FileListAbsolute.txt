@@ -1,0 +1,12 @@
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\obj\Release\Wladis Soraka.csprojResolveAssemblyReference.cache
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\Wladis Soraka.exe.config
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\Wladis Soraka.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\Wladis Soraka.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\EloBuddy.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\EloBuddy.SDK.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\SharpDX.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\SharpDX.XInput.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\bin\Release\Newtonsoft.Json.dll
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\obj\Release\Wladis Soraka.exe
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Soraka\Wladis Soraka\obj\Release\Wladis Soraka.pdb

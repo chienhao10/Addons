@@ -1,2 +1,0 @@
-c:\users\ladisla\documents\visual studio 2015\Projects\Wladis Gragas\Wladis Gragas\bin\Debug\Wladis Gragas.exe.config
-C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Gragas - Kopie\Wladis Ziggs\bin\Debug\Wladis Gragas.exe.config

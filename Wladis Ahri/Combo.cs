@@ -14,7 +14,7 @@ namespace Wladis_Ahri
         
         public static void ExecuteCombo()
         {
-            var target = TargetSelector.GetTarget(SpellsManager.Q.Range, DamageType.Magical);
+            var target = TargetSelector.GetTarget(SpellsManager.E.Range, DamageType.Magical);
             var FirstMob = EntityManager.MinionsAndMonsters.GetLaneMinions().Where(x => !x.IsDead && x.IsValidTarget(SpellsManager.W.Range)).OrderBy(x => x.Distance(myhero)).First();
 
             if ((target == null) || target.IsInvulnerable)
@@ -22,11 +22,13 @@ namespace Wladis_Ahri
 
             if (ComboMenu["E"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.E.Range) && SpellsManager.E.IsReady())
             {
-                SpellsManager.E.Cast(SpellsManager.E.GetPrediction(target).CastPosition);
+                if (SpellsManager.E.GetPrediction(target).HitChance >= HitChance.High)
+                    SpellsManager.E.Cast(SpellsManager.E.GetPrediction(target).CastPosition);
             }
 
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue && target.IsValidTarget(SpellsManager.Q.Range) && SpellsManager.Q.IsReady())
             {
+                if (SpellsManager.Q.GetPrediction(target).HitChance >= HitChance.High)
                 SpellsManager.Q.Cast(SpellsManager.Q.GetPrediction(target).CastPosition);
             }
 

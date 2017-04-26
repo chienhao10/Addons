@@ -12,7 +12,7 @@ namespace Wladis_Ziggs
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
         }
 
-        private static void Loading_OnLoadingComplete(EventArgs bla)
+        private static void Loading_OnLoadingComplete(EventArgs args)
         {
             if (Player.Instance.Hero != Champion.Ziggs) return;
             Menus.CreateMenu();

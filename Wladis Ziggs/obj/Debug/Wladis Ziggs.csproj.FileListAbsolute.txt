@@ -9,3 +9,4 @@ C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Ziggs.csprojResolveAssemblyReference.cache
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Gragas.exe
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\obj\Debug\Wladis Gragas.pdb
+C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ziggs\Wladis Ziggs\bin\Debug\Wladis Ziggs.exe.config

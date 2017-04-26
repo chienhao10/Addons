@@ -9,4 +9,3 @@ C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ahri\Wladis Ahri\b
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ahri\Wladis Ahri\obj\Release\Wladis Ahri.csprojResolveAssemblyReference.cache
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ahri\Wladis Ahri\obj\Release\Wladis Ahri.exe
 C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ahri\Wladis Ahri\obj\Release\Wladis Ahri.pdb
-C:\Users\LADISLA\Documents\Visual Studio 2015\Projects\Wladis Ahri\Wladis Ahri\bin\Release\EloBuddy.Sandbox.dll
