@@ -101,7 +101,7 @@ namespace MotivationBuddy
                     case GameEventId.OnChampionKill:
                         foreach (var Allly in Ally)
 
-                            if (Sender == Allly.NetworkId && FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 0 && Sender != myhero.NetworkId)
+                            if (Sender == Allly.NetworkId && FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 0  && Sender != myhero.NetworkId)
                             {
                                 string[] Motivation1 = { "Good Job!", "Nice man", "really nice", "well done", "well played", "gj", "wp", "gj wp", "well done", "well done mate", "nice", "nice play", "You did good there", "let's push", "good job", "nice work", "good play there bro", "we are going to win this", "we will win" };
 
@@ -157,6 +157,17 @@ namespace MotivationBuddy
                             Core.DelayAction(() => Chat.Say(Temp2), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
                             Core.DelayAction(() => Chat.Say("/Masterybadge"), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
                         }
+                        foreach (var Allly in Ally)
+                            if (Sender == Allly.NetworkId && FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 2 && Sender != myhero.NetworkId)
+                        {
+                                string[] Motivation2 = { "Next time you get him!", "Nice try, next time maybe", "Don't get greedy", "Be less agressive", "Don't lose motivation", "Don't give up", "bad luck", "come on let's team fight", "We will win" }; 
+
+                            Random RandName = new Random();
+                            string Temp2 = Motivation2[RandName.Next(0, Motivation2.Length)];
+
+                            Core.DelayAction(() => Chat.Say(Temp2), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
+                            Core.DelayAction(() => Chat.Say("/Masterybadge"), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
+                        }
                         break;
 
                 }
@@ -184,6 +195,18 @@ namespace MotivationBuddy
                             if (Sender == Enemi.NetworkId && Menus.FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 1)
                             {
                                 string[]Tilt2 = { "/all Seus lixo", "/all Voce é ruim hein", "/all Boa tentativa", "/all Vai jogar contra bot cara", "/all FON", "/all ez", "/All Muito ruim kkj", "/all Aprende a jogar cara kkj", "/all kkj", "/all MT RUIM", "/All EOQ", "/All jobado ", "/all Madeira V", "/all bronze V", "/all Que elo é esse msm ? kkj", "/all TRAB", "/all Muito facil", "/all N O O  B","/all Esse game ta chato","/all PISTOLA", "/all tilt", "/all Muito ruim kkj", "/all Voce tá trollando ou só é ruim msm ?", "/all Tou jogando contra bot ?", "/all Sai da minha JG", "/all até mais"};
+
+
+                                Random RandName = new Random();
+                                string Temp2 = Tilt2[RandName.Next(0, Tilt2.Length)];
+
+                                Core.DelayAction(() => Chat.Say(Temp2), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
+                                Player.DoEmote(Emote.Laugh);
+                                Core.DelayAction(() => Chat.Say("/Masterybadge"), FirstMenu["Delay"].Cast<Slider>().CurrentValue);
+                            }
+                            if (Sender == Enemi.NetworkId && Menus.FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 2)
+                            {
+                                string[] Tilt2 = { "/all Ta mère la pute qui touche les allocs", "/all Ta sœur le garage à bites", "/all FDP", "/all Appelle ta mère que je te refasse", "/all T'es une putain de classe abstraite, tu sers à rien bordel", "/all ez", "/All Va te faire enculer" };
 
 
                                 Random RandName = new Random();

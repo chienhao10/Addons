@@ -33,7 +33,7 @@ namespace MotivationBuddy
             FirstMenu.AddSeparator();
             FirstMenu.Add("LaughDelay", new Slider("- Delay for laugh", 3000, 0, 10000));
             FirstMenu.AddSeparator();
-            FirstMenu.Add("Language", new ComboBox("- Language", 0, "English", "Portuguese"));
+            FirstMenu.Add("Language", new ComboBox("- Language", 0, "English", "Portuguese", "Francais"));
 
         }
     }
