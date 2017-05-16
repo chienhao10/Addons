@@ -183,7 +183,7 @@ namespace MotivationBuddy
                         case GameEventId.OnChampionDie:
                             if (Sender == Enemi.NetworkId && Menus.FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 0)
                             {
-                                string[] Tilt2 = { "/all You're bad", "/all You suck", "/all Nice try", "/all Go play against bots", "/all noob", "/all ez", "/All so bad", "/all learn 2 play", "/all hahahha", "/all bad", "/All rekt", "/All boosted", "/all wood V", "/all bronze V", "/all What is this elo", "/all xd", "/all so ez", "/all l2p", "/all boring", "/all salt", "/all tilt", "/all so bad lmao", "/all are you trolling or just bad?", "/all Is this Co-op vs all or what?", "/all Get outta my jungle", "/all cy@" };
+                                string[] Tilt2 = { "/all ?", "Enjoy the grey screen, friend!", "/all You're bad", "/all You suck", "/all Nice try", "/all Go play against bots", "/all noob", "/all ez", "/All so bad", "/all learn 2 play", "/all hahahha", "/all bad", "/All rekt", "/All boosted", "/all wood V", "/all bronze V", "/all What is this elo", "/all xd", "/all so ez", "/all l2p", "/all boring", "/all salt", "/all tilt", "/all so bad lmao", "/all are you trolling or just bad?", "/all Is this Co-op vs all or what?", "/all Get outta my jungle", "/all cy@" };
 
                                 Random RandName = new Random();
                                 string Temp2 = Tilt2[RandName.Next(0, Tilt2.Length)];
@@ -194,7 +194,7 @@ namespace MotivationBuddy
                             }
                             if (Sender == Enemi.NetworkId && Menus.FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 1)
                             {
-                                string[]Tilt2 = { "/all Seus lixo", "/all Voce é ruim hein", "/all Boa tentativa", "/all Vai jogar contra bot cara", "/all FON", "/all ez", "/All Muito ruim kkj", "/all Aprende a jogar cara kkj", "/all kkj", "/all MT RUIM", "/All EOQ", "/All jobado ", "/all Madeira V", "/all bronze V", "/all Que elo é esse msm ? kkj", "/all TRAB", "/all Muito facil", "/all N O O  B","/all Esse game ta chato","/all PISTOLA", "/all tilt", "/all Muito ruim kkj", "/all Voce tá trollando ou só é ruim msm ?", "/all Tou jogando contra bot ?", "/all Sai da minha JG", "/all até mais"};
+                                string[]Tilt2 = { "/all ? ", "/all Seus lixo", "/all Voce é ruim hein", "/all Boa tentativa", "/all Vai jogar contra bot cara", "/all FON", "/all ez", "/All Muito ruim kkj", "/all Aprende a jogar cara kkj", "/all kkj", "/all MT RUIM", "/All EOQ", "/All jobado ", "/all Madeira V", "/all bronze V", "/all Que elo é esse msm ? kkj", "/all TRAB", "/all Muito facil", "/all N O O  B","/all Esse game ta chato","/all PISTOLA", "/all tilt", "/all Muito ruim kkj", "/all Voce tá trollando ou só é ruim msm ?", "/all Tou jogando contra bot ?", "/all Sai da minha JG", "/all até mais"};
 
 
                                 Random RandName = new Random();
@@ -206,7 +206,7 @@ namespace MotivationBuddy
                             }
                             if (Sender == Enemi.NetworkId && Menus.FirstMenu["Language"].Cast<ComboBox>().CurrentValue == 2)
                             {
-                                string[] Tilt2 = { "/all Ta mère la pute qui touche les allocs", "/all Ta sœur le garage à bites", "/all FDP", "/all Appelle ta mère que je te refasse", "/all T'es une putain de classe abstraite, tu sers à rien bordel", "/all ez", "/All Va te faire enculer" };
+                                string[] Tilt2 = { "/all ?", "/all Ta mère la pute qui touche les allocs", "/all Ta sœur le garage à bites", "/all FDP", "/all Appelle ta mère que je te refasse", "/all T'es une putain de classe abstraite, tu sers à rien bordel", "/all ez", "/All Va te faire enculer" };
 
 
                                 Random RandName = new Random();
