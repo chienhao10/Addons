@@ -61,7 +61,7 @@ namespace Wladis_Ziggs
             ComboMenu.AddSeparator(15);
             ComboMenu.Add("IgniteHealth", new Slider("- Ignite if enemy Hp % < Slider %", 40, 1, 100));
             ComboMenu.AddSeparator();
-            ComboMenu.AddLabel("- Press T for jump with W");
+            ComboMenu.Add("Jump", new KeyBind("- Jump to cursor", false, KeyBind.BindTypes.HoldActive, 'T'));
 
             HarassMenu.AddGroupLabel("Harass Settings");
             HarassMenu.Add("Q", new CheckBox("- Use Q"));

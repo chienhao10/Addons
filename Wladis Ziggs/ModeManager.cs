@@ -49,7 +49,7 @@ namespace Wladis_Ziggs
             if (MiscMenu["Z"].Cast<CheckBox>().CurrentValue)
                 Execute8();
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee))
+            if (ComboMenu["Jump"].Cast<KeyBind>().CurrentValue)
                 Execute9();
 
             if (HarassMenu["AutoQ"].Cast<CheckBox>().CurrentValue)

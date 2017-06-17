@@ -92,6 +92,7 @@ namespace Wladis_Ziggs
         {
             var target = TargetSelector.GetTarget(SpellsManager.Q.Range, DamageType.Magical);
 
+            Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPos);
             if (SpellsManager.W.IsReady())
             {
                 Core.DelayAction(() => SpellsManager.W.Cast(myhero.Position), 100);
