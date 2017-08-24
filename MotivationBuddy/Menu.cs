@@ -25,7 +25,11 @@ namespace MotivationBuddy
             FirstMenu.Add("EnableT", new CheckBox("- Enable Tilt"));
             FirstMenu.Add("Delay", new Slider("- Delay Slider", 100, 0, 10000));
             FirstMenu.AddSeparator();
+<<<<<<< HEAD
             FirstMenu.Add("Begin", new CheckBox("- beginning message"));
+=======
+            FirstMenu.Add("Begin", new CheckBox("- Message on beginning"));
+>>>>>>> origin/master
             FirstMenu.AddSeparator();
             FirstMenu.Add("Spam", new KeyBind("- Spam text below", false, KeyBind.BindTypes.HoldActive, 'G'));
             FirstMenu.Add("SpamText", new ComboBox("- Spam Text @all", 0, "/all Ez", "/all GG", "/all Bad", "/all L2P", "/all you suck"));
